@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="filter-section">
+    <form [formGroup]="filterForm">
+      <label>Type:</label>
+      <select formControlName="type">
+        <option value="All">All</option>
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+
+      <label>Category:</label>
+      <select formControlName="category">
+        <option value="All">All</option>
+        <option value="groceries">Groceries</option>
+        <option value="salary">Salary</option>
+        <option value="antertainment">Entertainment</option>
+      </select>
+    </form>
+  </div>
+
+  <div class="transactions-list">
+    <h2>Transactions</h2>
+    <div *ngIf="filteredTransactions.length > 0; else noTransactions">
+      <div class="transactions-table">
+        <div class="table-header">
+          <div class="header__item" style="width: 40%;">Name</div>
+          <div class="header__item" style="width: 18%;">Amount</div>
+          <div class="header__item" style="width: 18%;">Category</div>
+          <div class="header__item" style="width: 18%;">Date</div>
+          <div class="header__item" style="width: 6%;"></div>
+        </div>
+        <div class="table-row" *ngFor="let transaction of filteredTransactions">
+          <div class="row__item" style="width: 40%;">{{ transaction.title }}</div>
+          <div class="row__item" style="width: 18%;">{{ transaction.amount | currency:'USD' }}</div>
+          <div class="row__item" style="width: 18%;">{{ transaction.category }}</div>
+          <div class="row__item" style="width: 18%;">{{ transaction.date | date: 'YYYY/MM/dd' }}</div>
+          <div class="row__item" style="width: 6%;">
+            <button (click)="deleteTransaction(transaction.id)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #noTransactions>
+      <p>No transactions found</p>
+    </ng-template>
+  </div>
+</div>

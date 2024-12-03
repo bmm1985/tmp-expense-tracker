@@ -1,0 +1,31 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+}
+
+ng-select {
+  display: block;
+  width: 100%;
+}
+
+.ng-select .ng-dropdown-panel {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ng-select .ng-option {
+  padding: 10px;
+}
+
+.ng-select .ng-option-selected, .ng-select .ng-option:hover {
+  background-color: #d9e2f3;
+}

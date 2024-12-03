@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+}
+
+.transactions-list {
+  width: 100%;
+}
+
+.transactions-table {
+  width: 100%;
+  display: table;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.table-header, .table-row {
+  display: table-row;
+}
+
+.header__item, .row__item {
+  display: table-cell;
+  padding: 8px;
+  border: 1px solid #ddd;
+  background-color: #f1f1f1;
+  text-align: left;
+}
+
+.header__item {
+  font-weight: bold;
+  background-color: #e1e1e1;
+}
+
+.row__item {
+  background-color: #ffffff;
+}
+
+select {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.button-delete {
+  padding: 4px 8px;
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-delete:hover {
+  background-color: #ff7875;
+}

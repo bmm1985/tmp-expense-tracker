@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="transactions-list">
+    <app-transaction-list></app-transaction-list>
+  </div>
+  <div class="form-section">
+    <form [formGroup]="form" (ngSubmit)="addTransaction()">
+      <div class="input-group">
+        <label>Name</label>
+        <input type="text" formControlName="name">
+      </div>
+      <div class="input-group">
+        <label>Amount</label>
+        <input type="text" formControlName="amount" mask="separator.2">
+      </div>
+      <div class="input-group">
+        <label>Transaction Type</label>
+        <ng-select [items]="transactionTypes" bindLabel="label" bindValue="value" formControlName="transactionType"></ng-select>
+      </div>
+      <div class="input-group">
+        <label>Category</label>
+        <ng-select [items]="categories" bindLabel="name" bindValue="value" formControlName="category"></ng-select>
+      </div>
+      <div class="input-group">
+        <label>Date</label>
+        <input type="date" formControlName="date">
+      </div>
+      <button type="submit" [disabled]="!form.valid">Add Transaction</button>
+    </form>
+  </div>
+</div>
